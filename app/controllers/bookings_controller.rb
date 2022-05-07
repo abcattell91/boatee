@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
 
   def index
     @booking = Booking.all
+    @boat_guests = Booking.where()
+    @boat_hosts = Booking.where()
   end
 
   def new
