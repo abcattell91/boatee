@@ -1,13 +1,12 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
+  before_action :find_boat, only: [:new, :create]
   def index
-    @booking = Booking.all
-    @boat_guests = Booking.where(booking.confirmed_booking = true)
-    @boat_owner = Booking.where(booking.confirmed_booking = false)
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def new
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
     @booking.boat = @boat
     if @booking.save
       redirect_to boat_path(@boat) # guess work could be wrong, test!
@@ -17,10 +16,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user_id = @user.id
-    @booking.boat_id = @boat.id
-    @booking.cost = ((@booking.start_date - @booking.end_date).to_i) * @boat.price
+    @booking = Booking.new
+    @booking.boat = @boat
+    @booking.cost = (@booking.start_date - @booking.end_date).to_i * @boat.price
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -62,6 +60,10 @@ class BookingsController < ApplicationController
 
   def find_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def find_boat
+    @boat = Boat.find(params[:boat_id])
   end
 
 

@@ -1,0 +1,13 @@
+<div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
+  <%= simple_form_for @boat do |f| %>
+    <%= f.input :name %>
+    <%= f.input :boat_type %>
+    <%= f.input :docked %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :berth %>
+    <%= f.input :user_id, :input_html => { :value => current_user.id }, label: false, disabled: true %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to 'back', boats_path, class: "btn btn-primary" %>
+</div>
