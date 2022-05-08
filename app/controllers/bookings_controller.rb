@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-
+  before_action :find_booking, only: [:show, :edit, :update, :destroy]
   def index
     @booking = Booking.all
     @boat_guests = Booking.where(booking.confirmed_booking = true)
@@ -33,7 +33,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
-
+    @user = current_user
   end
 
   def update
