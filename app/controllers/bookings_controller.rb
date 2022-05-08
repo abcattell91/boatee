@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
 
   def index
     @booking = Booking.all
-    @boat_guests = Booking.where()
-    @boat_hosts = Booking.where()
+    @boat_guests = Booking.where(booking.confirmed_booking = true)
+    @boat_owner = Booking.where(booking.confirmed_booking = false)
   end
 
   def new
@@ -57,7 +57,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :boat_id, :cost, :start_date, :end_date)
+    params.require(:booking).permit(:user_id, :boat_id, :cost, :start_date, :end_date, :confirmed_booking)
   end
 
   def find_booking
