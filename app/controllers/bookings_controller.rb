@@ -7,27 +7,26 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.boat = @boat
-    if @booking.save
-      redirect_to boat_path(@boat) # guess work could be wrong, test!
-    else
-      render :new
-    end
   end
 
   def create
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
     @booking.boat = @boat
-    @booking.cost = (@booking.start_date - @booking.end_date).to_i * @boat.price
+    @booking.user = current_user
+    if @booking.end_date && @booking.start_date
+      @booking.cost = (@booking.end_date - @booking.start_date).to_f * @booking.boat.price.to_f
+    else
+      @booking.value = 0
+    end
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      redirect_to boat_path(@boat)
     end
   end
 
   def show
-    @booking = Booking.new
+    @boat = @booking.boat
   end
 
   def edit
@@ -38,7 +37,7 @@ class BookingsController < ApplicationController
     new_id = @booking.boat_id
     @boat = Boat.find(new_id)
     @booking.update(booking_params)
-    @booking.cost = ((@booking.start_date - @booking.end_date).to_i) * @boat.price
+    @booking.cost = ((@booking.start_date - @booking.end_date).to_f) * @boat.price
     if @booking.save
       redirect_to booking_path(@booking)
     else

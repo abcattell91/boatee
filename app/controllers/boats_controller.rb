@@ -20,8 +20,6 @@ class BoatsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
-    @bookings = @boat.bookings
   end
 
   def destroy
