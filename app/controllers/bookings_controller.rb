@@ -17,21 +17,41 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @booking.user_id = @user.id
+    @booking.boat_id = @boat.id
+    @booking.cost = ((@booking.start_date - @booking.end_date).to_i) * @boat.price
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def edit
+
   end
 
   def update
+    new_id = @booking.boat_id
+    @boat = Boat.find(new_id)
+    @booking.update(booking_params)
+    @booking.cost = ((@booking.start_date - @booking.end_date).to_i) * @boat.price
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render :new
+    end
   end
 
   def destroy
     @booking.destroy
 
-    redirect_to boat_path(@booking.list) # could be wrong! test first
+    redirect_to boat_path(@boats) # could be wrong! test first
   end
 
   private
@@ -43,4 +63,6 @@ class BookingsController < ApplicationController
   def find_booking
     @booking = Booking.find(params[:id])
   end
+
+
 end
