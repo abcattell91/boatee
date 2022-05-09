@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
   before_action :find_boat, only: [:new, :create]
+
   def index
     @bookings = policy_scope(Booking)
   end
