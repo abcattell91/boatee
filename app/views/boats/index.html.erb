@@ -1,0 +1,9 @@
+<div> <%= link_to 'add boat', new_boat_path(@boat), class: "btn btn-primary" %></div>
+<% @boats.each do |boat| %>
+<div class="boat-name"><h1><%= link_to boat.name, boat_path(boat)%></h1></div>
+
+<div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
+
+
+
+<% end %>
