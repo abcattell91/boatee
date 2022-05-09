@@ -1,12 +1,14 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_boat, only: [:show, :destroy]
 
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat)
   end
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
@@ -17,6 +19,7 @@ class BoatsController < ApplicationController
     else
       render :new
     end
+    authorize @boat
   end
 
   def show
@@ -30,10 +33,11 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :user_id, :price, :location, :berth, :boat_type, :docked, :image_url)
+    params.require(:boat).permit(:name, :boat_id, :price, :location, :berth, :boat_type, :docked, :image_url)
   end
 
   def find_boat
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 end

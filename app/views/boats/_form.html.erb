@@ -6,7 +6,6 @@
     <%= f.input :location %>
     <%= f.input :price %>
     <%= f.input :berth %>
-    <%= f.input :user_id, :input_html => { :value => current_user.id }, label: false, disabled: true %>
     <%= f.submit %>
   <% end %>
   <%= link_to 'back', boats_path, class: "btn btn-primary" %>

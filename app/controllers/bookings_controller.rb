@@ -2,17 +2,19 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
   before_action :find_boat, only: [:new, :create]
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = policy_scope(Booking)
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.boat = @boat
     @booking.user = current_user
+    authorize @booking
     if @booking.end_date && @booking.start_date
       @booking.cost = (@booking.end_date - @booking.start_date).to_f * @booking.boat.price.to_f
     else
@@ -48,7 +50,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
 
-    redirect_to boat_path(@boats) # could be wrong! test first
+    redirect_to bookings_path(@bookings) # could be wrong! test first
   end
 
   private
@@ -59,10 +61,12 @@ class BookingsController < ApplicationController
 
   def find_booking
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def find_boat
     @boat = Boat.find(params[:boat_id])
+    authorize @boat
   end
 
 

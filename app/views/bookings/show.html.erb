@@ -4,4 +4,6 @@
 <p>You have booked <%= (@booking.end_date - @booking.start_date).to_i %> days</p>
 
 <p>pack your swim gear and get ready to rumble!</p>
+
+<div class="icon-1"><%= link_to 'delete booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking" %></div>
 </div>
