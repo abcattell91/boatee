@@ -4,6 +4,6 @@
 <p> price £<%= @boat.price %> per night </p>
 <p> location <%= @boat.location %> </p>
 <p> type: <%= @boat.boat_type %> </p>
-<p> sleeps <%= @boat.berth %> </p>
+<p> sleeps <%= @boat.guests %> </p>
 <%= link_to 'back', boats_path, class: "btn btn-primary" %>
 <%= link_to 'Book this Boat', new_boat_booking_path(@boat), class: "btn btn-primary" %>
