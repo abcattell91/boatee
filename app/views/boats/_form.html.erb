@@ -4,8 +4,8 @@
       <div class="p-5 mt-5 shadow bg-white rounded justify-content-center">
          <%= simple_form_for @boat do |f| %>
            <%= f.input :name %>
-           <%= f.input :boat_type %>
-           <%= f.input :docked %>
+           <%= f.input :boat_type, collection: ["Bracera", "Banana Boat", "Barge", "Dinghy", "Pedalo", "Punt", "Super Yacht", "Ship", "Catamaran", "Hovercraft"], as: :select %>
+           <%= f.input :docked, as: :select %>
            <%= f.input :location %>
            <%= f.input :price %>
            <%= f.input :berth %>
