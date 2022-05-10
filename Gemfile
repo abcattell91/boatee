@@ -24,6 +24,9 @@ gem 'pundit'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# faker gem
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # devise
 gem 'devise'
 
