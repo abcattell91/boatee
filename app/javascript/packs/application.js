@@ -12,7 +12,10 @@ import {initFlatpickr} from "../plugins/flatpickr";
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-initFlatpickr();
+initFlatpickr({
+  enableTime: true,
+  dateFormat: "Y-m-d H:i",
+});
 
 import "controllers"
 import "bootstrap"
