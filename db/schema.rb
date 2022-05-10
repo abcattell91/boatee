@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_05_10_183128) do
     t.string "name"
     t.string "location"
     t.string "boat_type"
-    t.string "docked"
+    t.boolean "docked"
     t.bigint "user_id"
     t.float "price"
     t.integer "berth"
