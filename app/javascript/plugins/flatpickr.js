@@ -1,8 +1,20 @@
 // app/javascript/plugins/flatpickr.js
 import flatpickr from "flatpickr";
+require("flatpickr/dist/themes/material_blue.css");
+
 
 const initFlatpickr = () => {
-  flatpickr(".datepicker", {});
-}
+  const newBookingForm = document.getElementById('new_booking');
+  if (newBookingForm) {
+    flatpickr(".datepicker", {
+      minDate: 'today', // make previous dates unavailable
+      altInput: true, // display a user friendlier message
+      dateFormat: "Y-m-d",
+      disable: JSON.parse(newBookingForm.dataset.unavailableDates),
+      enableTime: true,
+      inline: false
+    });
+  }
+};
 
 export { initFlatpickr };
