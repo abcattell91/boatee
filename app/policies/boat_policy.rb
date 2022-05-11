@@ -15,12 +15,12 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user_is_owner
+    user_is_owner_or_admin
   end
 
   private
 
-  def user_is_owner
-    @current_user == record.user_id
+  def user_is_owner_or_admin
+    record.user_id == user || user.admin
   end
 end

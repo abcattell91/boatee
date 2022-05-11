@@ -2,8 +2,7 @@
 <% @boats.each do |boat| %>
 <div class="boat-name"><h1><%= link_to boat.name, boat_path(boat)%></h1></div>
 
-<div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
-
-
-
+<% if policy(boat).destroy? %>
+    <div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
+  <% end %>
 <% end %>
