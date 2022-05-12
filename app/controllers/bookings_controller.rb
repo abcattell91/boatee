@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.end_date && @booking.start_date
-      @booking.cost = (@booking.end_date - @booking.start_date).to_f * @booking.boat.price.to_f
+      @booking.cost = (@booking.end_date - @booking.start_date).to_f * @booking.boat.price.to_f.abs
     else
       @booking.value = 0
     end
@@ -36,14 +36,14 @@ class BookingsController < ApplicationController
     @user = current_user
     new_id = @booking.boat_id
     @boat = Boat.find(new_id)
-    @booking.cost = ((@booking.start_date - @booking.end_date).to_f) * @boat.price
+    @booking.cost = (@booking.end_date - @booking.start_date).to_f * @boat.price.to_f.abs
   end
 
   def update
     new_id = @booking.boat_id
     @boat = Boat.find(new_id)
     @booking.update(booking_params)
-    @booking.cost = ((@booking.start_date - @booking.end_date).to_f) * @boat.price
+    @booking.cost = (@booking.end_date - @booking.start_date).to_f * @boat.price.to_f.abs
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -54,7 +54,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
 
-    redirect_to bookings_path(@bookings) # could be wrong! test first
+    redirect_to bookings_path(@bookings)
   end
 
   private
