@@ -7,5 +7,8 @@
 <p> type: <%= @boat.boat_type %> </p>
 <p> sleeps <%= @boat.guests %> </p>
 <%= link_to 'back', boats_path, class: "btn btn-primary" %>
-<%= link_to 'Book this Boat', new_boat_booking_path(@boat), class: "btn btn-primary" %>
+
 <%= link_to 'View Boat bookings', bookings_path, class: "btn btn-primary" %>
+<!-- Button trigger modal -->
+<button type="button" class="text-end btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
+<%= render "bookings/new" %>
