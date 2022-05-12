@@ -1,0 +1,22 @@
+.home-banner {
+  position: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("background.jpeg");
+  background-size: cover !important;
+  object-fit: contain !important;
+  height: 100%;
+  width: 100vw;
+  margin-bottom: 30px;
+}
+
+.text {
+  text-align: center;
+}
+
+.text h1{
+  font-size: 80px;
+  color: white;
+}
+.text p {
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.82);
+}
