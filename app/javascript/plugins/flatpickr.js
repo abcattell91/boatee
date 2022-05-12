@@ -11,7 +11,6 @@ const initFlatpickr = () => {
       altInput: true, // display a user friendlier message
       dateFormat: "Y-m-d",
       disable: JSON.parse(newBookingForm.dataset.unavailableDates),
-      enableTime: true,
       inline: false
     });
   }
