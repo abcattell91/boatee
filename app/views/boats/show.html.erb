@@ -1,0 +1,23 @@
+<div class="container">
+<h1><%= @boat.name %></h1></div>
+<img class="test" src="<%=@boat.image_url%>">
+<p> docked? - <%= @boat.docked %> </p>
+<p> price £<%= @boat.price %> per night </p>
+<p> location <%= @boat.location %> </p>
+<p> type: <%= @boat.boat_type %> </p>
+<p> sleeps <%= @boat.guests %> </p>
+<%= link_to 'back', boats_path, class: "btn btn-primary" %>
+
+<%= link_to 'View Boat bookings', bookings_path, class: "btn btn-primary" %>
+<!-- Button trigger modal -->
+<button type="button" class="text-end btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
+<%= render "bookings/new" %>
+
+<% @booking.reviews.each do |review| %>
+  <div>
+  <p><%= ':star:️' * review.rating %></p>
+    <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+    <p class="mb-0"><%= review.comment %></p>
+  </div>
+
+<% end %>
