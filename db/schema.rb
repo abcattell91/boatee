@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_05_12_192506) do
-=======
-ActiveRecord::Schema.define(version: 2022_05_11_161437) do
->>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +42,6 @@ ActiveRecord::Schema.define(version: 2022_05_11_161437) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-<<<<<<< HEAD
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
     t.integer "rating"
@@ -58,8 +53,6 @@ ActiveRecord::Schema.define(version: 2022_05_11_161437) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-=======
->>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -75,9 +68,6 @@ ActiveRecord::Schema.define(version: 2022_05_11_161437) do
 
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
-<<<<<<< HEAD
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
-=======
->>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
 end
