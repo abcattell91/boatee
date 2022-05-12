@@ -12,3 +12,15 @@
 <!-- Button trigger modal -->
 <button type="button" class="text-end btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
 <%= render "bookings/new" %>
+<<<<<<< HEAD
+
+<% @booking.reviews.each do |review| %>
+  <div>
+  <p><%= ':star:️' * review.rating %></p>
+    <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+    <p class="mb-0"><%= review.comment %></p>
+  </div>
+
+<% end %>
+=======
+>>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb

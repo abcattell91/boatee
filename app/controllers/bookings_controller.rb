@@ -8,7 +8,13 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+<<<<<<< HEAD
+    @review = Review.new
     authorize @booking
+    authorize @review
+=======
+    authorize @booking
+>>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
   end
 
   def create
@@ -30,6 +36,11 @@ class BookingsController < ApplicationController
 
   def show
     @boat = @booking.boat
+<<<<<<< HEAD
+    @review = Review.new
+    @booking = Booking.new
+=======
+>>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
   end
 
   def edit

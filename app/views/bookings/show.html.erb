@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+<h1><%= @booking.boat.name %></h1>
+<p>TOTAL Boatee cost: £<%= @booking.cost %></p>
+<p>You have booked from <%= @booking.start_date %> to <%= @booking.end_date %></p>
+<p>You have booked <%= (@booking.end_date - @booking.start_date).to_i %> days</p>
+
+<p>pack your swim gear and get ready to rumble!</p>
+
+<div class="icon-1"><%= link_to 'delete booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-primary"%></div>
+<div class="icon-1"><%= link_to 'edit booking', edit_boat_booking_path(@boat, @booking), class: "btn btn-primary" %>
+=======
 <div class="container mt-5"><h1><%= @booking.boat.name %></h1>
   <%=image_tag(@booking.boat.image_url) %>
   <div class="boat-text mt-3">
@@ -12,3 +23,4 @@
   <%= link_to 'Update Booking', edit_boat_booking_path(@boat, @booking), class: "btn btn-lg btn-primary mb-5" %>
   </div>
 </div
+>>>>>>> 476c9184ae9f6c66b1af47634a88eabacb2b82cb
