@@ -34,6 +34,9 @@ class BookingsController < ApplicationController
 
   def edit
     @user = current_user
+    new_id = @booking.boat_id
+    @boat = Boat.find(new_id)
+    @booking.cost = ((@booking.start_date - @booking.end_date).to_f) * @boat.price
   end
 
   def update
