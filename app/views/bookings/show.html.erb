@@ -5,5 +5,5 @@
 
 <p>pack your swim gear and get ready to rumble!</p>
 
-<div class="icon-1"><%= link_to 'delete booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking" %></div>
-</div>
+<div class="icon-1"><%= link_to 'delete booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-primary"%></div>
+<div class="icon-1"><%= link_to 'edit booking', edit_boat_booking_path(@boat, @booking), class: "btn btn-primary" %>
