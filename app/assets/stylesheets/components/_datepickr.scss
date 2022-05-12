@@ -1,0 +1,11 @@
+.flatpickr-calendar {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  z-index: 9999 !important;
+
+  -webkit-transform   : translateX(-50%) translateY(-50%) !important;
+  -moz-transform      : translateX(-50%) translateY(-50%) !important;
+  -ms-transform       : translateX(-50%) translateY(-50%) !important;
+  transform           : translateX(-50%) translateY(-50%) !important;
+}
