@@ -12,7 +12,11 @@
               <h5 class="card-title boat-name"><%= link_to boat.name, boat_path(boat)%></h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
-            <div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
+            <div class="delete"><% if policy(boat).destroy? %>
+              <div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
