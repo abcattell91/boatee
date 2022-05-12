@@ -16,4 +16,19 @@ const initFlatpickr = () => {
   }
 };
 
+const initFlatpickr2 = () => {
+  const editBookingForm = document.getElementById('edit_booking_12');
+  if (editBookingForm) {
+    flatpickr(".datepicker2", {
+      minDate: 'today', // make previous dates unavailable
+      altInput: true, // display a user friendlier message
+      dateFormat: "Y-m-d",
+      disable: JSON.parse(editBookingForm.dataset.unavailableDates),
+      inline: false
+    });
+  }
+};
+
+
 export { initFlatpickr };
+export { initFlatpickr2 };
