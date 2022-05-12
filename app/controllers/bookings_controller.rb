@@ -73,5 +73,4 @@ class BookingsController < ApplicationController
     authorize @boat
   end
 
-
 end
