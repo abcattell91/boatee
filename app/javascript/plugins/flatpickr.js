@@ -17,7 +17,7 @@ const initFlatpickr = () => {
 };
 
 const initFlatpickr2 = () => {
-  const editBookingForm = document.getElementById('edit_booking_12');
+  const editBookingForm = document.getElementById('edit_booking');
   if (editBookingForm) {
     flatpickr(".datepicker2", {
       minDate: 'today', // make previous dates unavailable
