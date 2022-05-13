@@ -1,23 +1,9 @@
 <div class="m-3 p-3"> <%= link_to 'add boat', new_boat_path(@boat), class: "btn btn-primary" %></div>
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 mt-3">
-    <% @boats.each do |boat| %>
-    <div class="col-md-4 mb-4">
-      <div class="shadow card h-100 img-thumbnail mb-2" style="">
-        <div class="card-group">
-          <div class="card">
-            <img class="card-img-top" src="<%=boat.image_url%>" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title boat-name"><%= link_to boat.name, boat_path(boat)%></h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="delete"><% if policy(boat).destroy? %>
-              <div class="delete"><%= link_to 'remove boat', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_boat" %></div>
-                <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="card-container">
+  <div class="cards">
+  <% @boats.each do |boat| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=boat.image_url%>)">
+      <%= link_to boat.name, boat_path(boat), class: "card-text"%>
     </div>
     <% end %>
   </div>
