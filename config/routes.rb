@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings
   end
-  resources :bookings, except: [:new, :create]
+  resources :bookings, except: [:new, :create] do
+    resources :reviews, only: [:new, :create, :show, :index]
+  end
 end
