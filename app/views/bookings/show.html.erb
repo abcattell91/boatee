@@ -9,6 +9,7 @@
     <p>Pack your swim gear and get ready to rumble!</p>
   </div>
   <div class="icon"><%= link_to 'Cancel Booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-lg btn-primary mb-5"%>
-  <%= link_to 'Update Booking', edit_boat_booking_path(@boat, @booking), class: "btn btn-lg btn-primary mb-5" %>
+  <button type="button" class="text-end btn btn-lg btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Update Booking</button>
+  <%= render "bookings/new" %>
   </div>
 </div
