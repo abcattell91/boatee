@@ -24,6 +24,7 @@ class BoatsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = @boat.bookings
   end
 
   def destroy

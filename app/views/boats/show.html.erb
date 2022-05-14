@@ -6,8 +6,22 @@
 <p> Boat location <%= @boat.location %> </p>
 <p> Boat Type <%= @boat.boat_type %> </p>
 <p> Guests: <%= @boat.guests %> </p>
-<%= link_to 'back', boats_path, class: "btn btn-lg btn-primary mb-5" %>
 
+<div>
+  <h2>Reviews for <%= @boat.name %></h2>
+  <% @bookings.each do |booking| %>
+    <div>
+      <% booking.reviews.each do |review|%>
+      <%= review.rating.times do %>
+        <i class="fas fa-star star-yellow"></i>
+      <% end %>
+      <p class="mb-0"><%= review.comment %></p>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to 'back', boats_path, class: "btn btn-lg btn-primary mb-5" %>
 <%= link_to 'View Bookings & Reviews', bookings_path, class: "btn btn-lg btn-primary mb-5" %>
 <!-- Button trigger modal -->
 <button type="button" class="text-end btn btn-lg btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
