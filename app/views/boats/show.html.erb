@@ -12,10 +12,10 @@
   <div class="container-img-btn">
     <img class="boat-image" src="<%=@boat.image_url%>">
       <div class="container-button">
-        <%= link_to 'back', boats_path, class: "btn btn-lg btn-primary mb-5" %>
-        <%= link_to 'View Bookings', bookings_path, class: "btn btn-lg btn-primary mb-5" %>
+        <%= link_to 'Back', boats_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to 'View Bookings', bookings_path, class: "btn btn-lg btn-primary " %>
   <!-- Button trigger modal -->
-        <button type="button" class="text-end btn btn-lg btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
+        <button type="button" class=" btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
         <%= render "bookings/new" %>
       </div>
     </div>

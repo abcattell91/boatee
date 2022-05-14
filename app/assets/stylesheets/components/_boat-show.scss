@@ -2,21 +2,15 @@
   margin: 0 auto;
   padding: 32px;
   justify-content: center;
-
+  display: flex;
 }
 
 .boat-image {
   margin: 10px;
-  display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
-  background-position: center;
   height: 500px;
   width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -27,15 +21,11 @@
 
 .container-info {
   margin: 16px;
-  border-radius: 16px;
   width: 500px;
   height: 500px;
-  position: absolute;
-  text-align: flex-end;
-  justify-content: flex-end;
 }
 .container-button {
-  margin: 16px;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-left: 38px;
 }
