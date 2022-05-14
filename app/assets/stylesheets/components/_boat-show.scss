@@ -1,0 +1,31 @@
+.container-hero {
+  margin: 0 auto;
+  padding: 32px;
+  justify-content: center;
+  display: flex;
+}
+
+.boat-image {
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.container-info {
+  margin: 16px;
+  width: 500px;
+  height: 500px;
+}
+.container-button {
+  justify-content: center !important;
+  align-items: center !important;
+  padding-left: 38px;
+}
