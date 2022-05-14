@@ -20,3 +20,19 @@
       </div>
     </div>
 </div>
+<div>
+<div class="container-reviews p-5 m-5 shadow bg-white rounded">
+  <h2>Reviews for <%= @boat.name %></h2>
+  <% @bookings.each do |booking| %>
+    <div>
+      <% booking.reviews.each do |review|%>
+      <%= review.rating.times do %>
+        <i class="fas fa-star star-yellow"></i>
+      <% end %>
+      <p class="mb-0"><%= review.comment %></p>
+      <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+    <% end %>
+    </div>
+  <% end %>
+</div>
+</div>
