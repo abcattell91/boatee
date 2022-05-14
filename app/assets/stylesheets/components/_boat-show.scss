@@ -1,0 +1,41 @@
+.container-hero {
+  margin: 0 auto;
+  padding: 32px;
+  justify-content: center;
+
+}
+
+.boat-image {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.container-info {
+  margin: 16px;
+  border-radius: 16px;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  text-align: flex-end;
+  justify-content: flex-end;
+}
+.container-button {
+  margin: 16px;
+  justify-content: center;
+  align-items: center;
+}
