@@ -3,7 +3,7 @@ import flatpickr from "flatpickr";
 
 export default class extends Controller {
   connect() {
-    flatpickr(".datepicker", "datepickr2", {});
-
+    // flatpickr(".datepicker", "datepickr2", {});
+    console.log('hi')
   }
 }
