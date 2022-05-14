@@ -6,8 +6,7 @@
     <%= simple_form_for [@boat, @booking], data: { unavailable_dates: @boat.unavailable_dates.to_json } do |f| %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.submit :button,"Book Boat", data: {confirm: "Are you sure this information is correct?"} %>
+      <%= f.button :submit, "Book Boat", class: 'btn btn-primary'%>
     <% end %>
   </div>
-
 </div>
