@@ -1,0 +1,16 @@
+.button-home {
+  color: #b9eff0;
+  border: 2px solid #b9eff0;
+  padding: 8px 24px;
+  border-radius: 50px;
+  transition: opacity 0.3s ease;
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.button-home:hover {
+  background-color: #ba591c;;
+  color: #b9eff0;
+  font-weight: bold;
+}
