@@ -1,6 +1,6 @@
 // app/javascript/plugins/flatpickr.js
 import flatpickr from "flatpickr";
-require("flatpickr/dist/themes/material_blue.css");
+require("flatpickr/dist/themes/material_orange.css");
 
 
 const initFlatpickr = () => {
