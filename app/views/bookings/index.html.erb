@@ -1,7 +1,13 @@
-<% @bookings.each do |booking|%>
-  <h1><%=link_to booking.boat.name, booking_path(booking) %></h1>
-  <p>Total Booking Cost = £<%= booking.cost %></p>
-  <p>You have booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-  <p>You have booked <%= (booking.end_date - booking.start_date).to_i %> days</p>
-  <div class="icon-1"><%= link_to 'delete booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-danger" %></div>
-<% end %>
+<div class="card-container">
+  <div class="cards">
+  <% @bookings.each do |booking|%>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=booking.boat.image_url%>)">
+    <h1><%=link_to booking.boat.name, booking_path(booking) %></h1>
+    <p>Total Booking Cost = £<%= booking.cost %></p>
+    <p>You have booked from <%= booking.start_date %> to <%= booking.end_date %></p>
+    <p>You have booked <%= (booking.end_date - booking.start_date).to_i %> days</p>
+    <div class="icon-1"><%= link_to 'delete booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-danger" %></div>
+    <% end %>
+    </div>
+  </div>
+</div>
