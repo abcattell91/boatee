@@ -6,22 +6,27 @@
   </div>
 </div>
 
-
-  <div class="home-card-container">
-      <% @boats.each do |boat| %>
-      <div class="home-cards">
-        <%= link_to boat_path(boat) do %>
-          <img src='<%= "#{boat.image_url}" %>'/>
-          <% end %>
-          <h4><%= boat.name %><br>£ <%= "#{boat.price}" %> / day
-            <% @bookings.each do |booking| %>
-              <% booking.reviews.each do |review|%>
-              <p><%= '⭐️' * review.rating %></p>
-
-            <% end %>
-          <% end %>
-        <% end %>
-        </div>
-</div>
 <%= render 'shared/footer' %>
-</div>
+
+<div class="home-card-container">
+<div class="home-cards">
+  <% @boats.each do |boat| %>
+  <div class="home-card-category">
+    <%= link_to boat_path(boat) do %>
+    <%= image_tag("#{boat.image_url}", class:"card-img-top img-thumbnail")%>
+      <div class="card-body">
+      <h4 class="home-card-text"><%= boat.name %>
+        <% @reviews.each do |review| %>
+        <%= '⭐️' * review.rating %>
+        <% end %></h4>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= boat.price %>p/n<br>
+      <i class="fa-solid fa-bed"></i>&nbsp;<%= boat.guests %>
+      </h5>
+        </div>
+    <% end %> <!-- end of link_to -->
+    </div>
+    <% end %> <!-- end of boat.each -->
+
+
+    </div>
+  </div>
