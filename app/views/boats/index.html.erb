@@ -1,13 +1,13 @@
-<div class="m-3 p-3"> <%= link_to 'add boat', new_boat_path(@boat), class: "btn btn-primary" %></div>
+<div class="m-3 p-3"> <%= link_to 'Hoast your boat', new_boat_path(@boat), class: "btn btn-primary" %></div>
 
 <div class="home-card-container">
 <div class="home-cards">
   <% @boats.each do |boat| %>
   <div class="home-card-category">
     <%= link_to boat_path(boat) do %>
-    <%= image_tag("#{boat.image_url}", class:"card-img-top img-thumbnail")%>
+    <%= image_tag("#{boat.image_url}", class:"boat-img-card img-thumbnail")%>
       <div class="card-body">
-      <h4 class="home-card-text"><%= boat.name %>
+      <h4 class="boat-card-text"><%= boat.name %>
       <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= boat.price %>p/n<br>
       <i class="fa-solid fa-bed"></i>&nbsp;<%= boat.guests %>
       </h5>
@@ -15,7 +15,8 @@
     <% end %> <!-- end of link_to -->
     </div>
     <% end %> <!-- end of boat.each -->
-
+</div>
+</div>
 
 
 <%= render 'shared/footer' %>
