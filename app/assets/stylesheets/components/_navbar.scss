@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgb(244, 244, 244);
+  background: #D76527;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,28 +12,24 @@
   border-radius: 12px;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: #d76427;
-}
-
 .nav-item {
   flex-direction: row;
   display: flex;
   justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
 }
 
 .nav-link {
-  border-right: 1px solid #D76527;
+  color: white !important;
+  border-right: 1px solid #ffffff;
 }
 
 .nav-link:hover {
-  color: #95471d;
+  color: #95471d !important;
 }
 
 .last-link {
   border: none;
-}
-
-.container-fluid {
-  box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.2);
 }
