@@ -19,7 +19,8 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
   textWrapper();
-  findYourElement();
+=======
+  // textWrapper();
   // initFlatpickr2();
 });
 
