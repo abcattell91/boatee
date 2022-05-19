@@ -18,7 +18,7 @@ ActiveStorage.start()
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
-  // textWrapper();
+  textWrapper();
   // textWrapper();
   // initFlatpickr2();
 });
