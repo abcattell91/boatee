@@ -8,18 +8,19 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+     <div class="nav-item">
+      <%= link_to "Home", root_path, class: "nav-link" %>
+      <%= link_to "Host your boat", new_boat_path(@boat), class: "nav-link" %>
+      <%= link_to "View Boats", boats_path, class: "nav-link" %>
+      <%= link_to "Bookings", bookings_path, class: "nav-link last-link" %>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item active me-2 p-1">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.8RpiPi1ZlOup705tqVC2LAHaHa%26pid%3DApi&f=1", class: "avatar-large dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Host your boat", new_boat_path(@boat), class: "dropdown-item" %>
-              <%= link_to "View Boats", boats_path, class: "dropdown-item" %>
-              <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
