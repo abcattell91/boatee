@@ -3,7 +3,11 @@ class BookingsController < ApplicationController
   before_action :find_boat, only: [:new, :create]
 
   def index
-    @bookings = policy_scope(Booking)
+    bookings = policy_scope(Booking)
+    @past_bookings = bookings.where("start_date <= '#{Date.today}'")
+    @past_bookings.sort_by { |booking| booking.start_date }
+    @future_bookings = bookings.where("start_date >= '#{Date.today}'")
+    @future_bookings.sort_by { |booking| booking.start_date }
   end
 
   def new
