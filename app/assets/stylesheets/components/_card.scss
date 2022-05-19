@@ -108,6 +108,12 @@ a:active{
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 24px;
 }
+
+.booking-home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
+}
 .home-card-container {
   margin: 24px;
   display: grid;
