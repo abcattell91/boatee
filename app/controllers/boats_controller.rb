@@ -4,6 +4,11 @@ class BoatsController < ApplicationController
 
   def index
     @boats = policy_scope(Boat)
+    if params[:query].present?
+      @boats = Boat.search_by_name_and_location(params[:query])
+    else
+      @boats = policy_scope(Boat)
+    end
   end
 
   def new

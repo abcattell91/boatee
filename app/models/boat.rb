@@ -1,6 +1,13 @@
 class Boat < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_location,
+    against: [ :name, :location ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
   BOAT_CATEGORIES = %w[Bracera Banana-Boat Barge Dinghy Pedalo Punt Yacht Ship Catamaran Hovercraft]
   validates :name, :location, :price, :image_url, presence: true
   validates :boat_type, inclusion: { in: BOAT_CATEGORIES }
