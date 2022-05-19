@@ -1,16 +1,20 @@
-<div class="container mt-5"><h1><%= @booking.boat.name %></h1>
-  <%=image_tag(@booking.boat.image_url) %>
-  <div class="boat-text mt-3">
-    <p>Total trip cost: <strong>£<%= @booking.cost %></strong></p>
-    <p>You have booked from <strong><%= @booking.start_date %> to <%= @booking.end_date %></strong></p>
-    <p>Your total trip will be: <strong><%= (@booking.end_date - @booking.start_date).to_i %> days</strong></p>
-    <p>Boat-location: <strong><%= @booking.boat.location %> </strong></p>
+<div class="container-hero">
+  <div class="container-info shadow bg-white rounded m-3 p-3">
+    <h1><%= @booking.boat.name %></h1>
+        <p>Total trip cost: <strong>£<%= @booking.cost %></strong></p>
+        <p>You have booked from <strong><%= @booking.start_date.strftime("%d-%m-%Y") %> to <%= @booking.end_date.strftime("%d-%m-%Y") %></strong></p>
+        <p>Your total trip will be: <strong><%= (@booking.end_date - @booking.start_date).to_i %> days</strong></p>
+        <p>Boat-location: <strong><%= @booking.boat.location %> </strong></p>
+        <p>Pack your swim gear and get ready to rumble!</p>
+      </div>
 
-    <p>Pack your swim gear and get ready to rumble!</p>
+  <div class="container-img-btn">
+    <img class="boat-image" src="<%=@booking.boat.image_url%>">
+    <div class="container-booking-btn">
+      <%= link_to 'Cancel Booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Update Booking</button>
+      <%= link_to 'Add a Review', new_booking_review_path(@booking), class: "btn btn-primary" %>
+      <%= render "bookings/new" %>
+    </div>
   </div>
-  <div class="icon"><%= link_to 'Cancel Booking', boat_booking_path(@boat, @booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-lg btn-primary mb-5"%>
-  <button type="button" class="text-end btn btn-lg btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Update Booking</button>
-  <%= link_to 'Add a Review', new_booking_review_path(@booking), class: "btn btn-lg btn-primary mb-5" %>
-  <%= render "bookings/new" %>
-  </div>
-</div
+</div>

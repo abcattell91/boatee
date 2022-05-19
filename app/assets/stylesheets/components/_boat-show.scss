@@ -24,8 +24,15 @@
   width: 500px;
   height: 500px;
 }
+.container-info p {
+  font-size: 24px;
+}
 .container-button {
   justify-content: center !important;
   align-items: center !important;
   padding-left: 38px;
+}
+
+.container-booking-btn {
+  margin-left: 60px;
 }
