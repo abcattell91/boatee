@@ -12,6 +12,10 @@
   border-radius: 12px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: #d76427;
+}
+
 .nav-item {
   flex-direction: row;
   display: flex;
@@ -19,12 +23,11 @@
 }
 
 .nav-link {
-  color: #D76527 !important;
   border-right: 1px solid #D76527;
 }
 
 .nav-link:hover {
-  color: #95471d !important;
+  color: #95471d;
 }
 
 .last-link {
