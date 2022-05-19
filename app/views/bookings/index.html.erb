@@ -1,13 +1,20 @@
-<div class="card-container">
-  <div class="cards">
+<div class="p-5 mt-3 shadow bg-white rounded justify-content-center">
+<h1 class="text-center p-2">Past and Future Bookings</h1>
+  <div class="row row-cols-1 row-cols-md-3 mt-3">
   <% @bookings.each do |booking|%>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=booking.boat.image_url%>)">
-    <h1><%=link_to booking.boat.name, booking_path(booking) %></h1>
-    <p>Total Booking Cost = £<%= booking.cost %></p>
-    <p>You have booked from <%= booking.start_date %> to <%= booking.end_date %></p>
-    <p>You have booked <%= (booking.end_date - booking.start_date).to_i %> days</p>
-    <div class="icon-1"><%= link_to 'delete booking', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_booking", class: "btn btn-danger" %></div>
-    <% end %>
+    <div class="col-md-4 mb-4">
+      <div class="card-image-top boat-image h-100 img-thumbnail mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%=booking.boat.image_url%>)">
+        <div class="card-body">
+          <h1><%=link_to booking.boat.name, booking_path(booking), class: "card-text" %></h1>
+          <p class="card-text"><%= booking.start_date.strftime("%d-%m-%Y") %> - <%= booking.end_date.strftime("%d-%m-%Y") %></p>
+          <p class="card-text"><%= (booking.end_date - booking.start_date).to_i %> Nights</p>
+          <p class="card-text">Total: £<%= booking.cost %></p>
+          <%= link_to 'Remove', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-button" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
-</div>
+
+<%= render 'shared/footer' %>
