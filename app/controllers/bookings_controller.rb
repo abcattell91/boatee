@@ -4,7 +4,10 @@ class BookingsController < ApplicationController
 
   def index
     bookings = policy_scope(Booking)
-    @sorted_bookings = bookings.sort_by { |booking| booking.start_date }
+    @past_bookings = bookings.where("start_date <= '#{Date.today}'")
+    @past_bookings.sort_by { |booking| booking.start_date }
+    @future_bookings = bookings.where("start_date >= '#{Date.today}'")
+    @future_bookings.sort_by { |booking| booking.start_date }
   end
 
   def new

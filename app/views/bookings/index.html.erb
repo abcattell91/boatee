@@ -1,8 +1,29 @@
-<h1 class="text-center p-2">Past and Future Bookings</h1>
+<h1 class="text-center p-2">Future Bookings</h1>
 
 <div class="home-card-container">
 <div class="booking-home-cards">
-  <% @sorted_bookings.each do |booking| %>
+  <% @future_bookings.each do |booking| %>
+  <div class="home-card-category">
+    <%= link_to booking_path(booking) do %>
+    <%= image_tag("#{booking.boat.image_url}", class:"boat-img-card img-thumbnail")%>
+      <div class="card-body">
+      <h4 class="boat-card-text"><%= booking.boat.name %>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-moon"></i>&nbsp;<%= (booking.end_date - booking.start_date).to_i %> Nights<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-calendar-days"></i></i>&nbsp;<%=booking.start_date.strftime("%d-%m-%Y") %> - <%= booking.end_date.strftime("%d-%m-%Y") %><br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= booking.cost%> Total<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-location-arrow"></i>&nbsp;<%= booking.boat.location%>
+      </h5>
+        </div>
+    <% end %> <!-- end of link_to -->
+    </div>
+    <% end %> <!-- end of boat.each -->
+</div>
+</div>
+<h1 class="text-center p-2">Past Bookings</h1>
+
+<div class="home-card-container">
+<div class="booking-home-cards">
+  <% @past_bookings.each do |booking| %>
   <div class="home-card-category">
     <%= link_to booking_path(booking) do %>
     <%= image_tag("#{booking.boat.image_url}", class:"boat-img-card img-thumbnail")%>
