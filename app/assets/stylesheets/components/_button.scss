@@ -10,7 +10,13 @@
 }
 
 .button-home:hover {
-  background-color: #d76427;;
+  background-color: #d76427;
   color: white;
   font-weight: bold;
+}
+
+.button-new a {
+  background-color: #D76527;
+  border-radius: 100px;
+  color: white;
 }
