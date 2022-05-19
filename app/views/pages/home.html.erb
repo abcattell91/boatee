@@ -15,9 +15,9 @@
   </div>
 </div>
 
-<%= render 'shared/footer' %>
 
 <div class="home-card-container">
+<h2 class="favourites">Our Top Picks 🛟</h2>
 <div class="home-cards">
   <% @boats.each do |boat| %>
   <div class="home-card-category">
@@ -39,3 +39,5 @@
 
     </div>
   </div>
+
+  <%= render 'shared/footer' %>
