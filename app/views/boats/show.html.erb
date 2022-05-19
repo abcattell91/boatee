@@ -1,11 +1,11 @@
 <div class="container-hero">
 
-  <div class="container-info">
+  <div class="container-info shadow bg-white rounded m-3 p-3">
     <h1><%= @boat.name %></h1>
-    <p> Is the boat docked? - <%= @boat.docked %> </p>
+    <p> Docked? - <%= @boat.docked %> </p>
     <p> Cost: £<%= @boat.price %> per night </p>
     <p> Boat location <%= @boat.location %> </p>
-    <p> Boat Type <%= @boat.boat_type %> </p>
+    <p> Boat Type: <%= @boat.boat_type %> </p>
     <p> Guests: <%= @boat.guests %> </p>
   </div>
 
@@ -20,21 +20,19 @@
       </div>
     </div>
 </div>
-
 <div>
-  <div class="container-reviews p-5 m-5 shadow bg-white rounded">
-    <h2>Reviews for <%= @boat.name %></h2>
-    <% @bookings.each do |booking| %>
-      <div>
-        <% booking.reviews.each do |review|%>
-        <%= review.rating.times do %>
-          <i class="fas fa-star star-yellow"></i>
-        <% end %>
-        <p class="mb-0"><%= review.comment %></p>
-        <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+<div class="container-reviews p-5 m-5 shadow bg-white rounded">
+  <h2>Reviews for <%= @boat.name %></h2>
+  <% @bookings.each do |booking| %>
+    <div>
+      <% booking.reviews.each do |review|%>
+      <p><%= '⭐️' * review.rating.times do %></p>
       <% end %>
-      </div>
+      <p class="mb-0"><%= review.comment %></p>
+      <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
     <% end %>
-  </div>
-  <%= render 'shared/footer' %>
+    </div>
+  <% end %>
 </div>
+
+  <%= render 'shared/footer' %>
