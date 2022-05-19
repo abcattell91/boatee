@@ -1,0 +1,74 @@
+.new_header {
+  text-align: center;
+
+};
+
+.new_header h1 {
+ margin-top: 50px;
+ margin-bottom: -79px;
+ font-weight: 800 ;
+ text-shadow: 1px 1px 3px #D76527;
+}
+
+.banner-new {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("boatnight.jpeg");
+  background-size: cover;
+  background-position:50% 50%;
+  padding: 150px 0;
+}
+
+.banner-new h1 {
+  margin-top: -50px;
+  margin-bottom: -100px;
+  color: white;
+  text-shadow: 1px 1px 3px #D76527;
+  font-size: 65px;
+  font-weight: bold;
+  font-family: 'Poiret One', cursive;
+}
+
+.banner-new p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: 'Poiret One', cursive;
+  margin-bottom: -58px;
+}
+
+.form-new input {
+  background-color: #D76527;
+  border-radius: 50px;
+  color: white;
+}
+
+.form-new label {
+ color: white;
+ font-size: larger;
+ font-weight: bold;
+}
+
+.form-new select{
+  background-color: #D76527;
+  border-radius: 50px;
+  color: white;
+}
+
+.ml5 {
+  position: relative;
+  font-weight: 300;
+  font-size: 4.5em;
+  color: #402d2d;
+}
+
+.ml15 {
+  font-weight: 800;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.ml15 .word {
+  display: inline-block;
+  line-height: 1em;
+}
