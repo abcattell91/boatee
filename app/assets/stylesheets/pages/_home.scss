@@ -36,3 +36,21 @@
   font-weight: 900;
   padding-bottom: 15px;
 }
+
+.carousel {
+  width: 75%;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carousel-control-prev {
+  color: grey;
+}
+
+.favourites {
+  padding-top: 15px;
+}
