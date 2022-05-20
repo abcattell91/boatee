@@ -1,6 +1,6 @@
 // Wrap every letter in a span
 var findYourElement = document.querySelector('.ml14 .letters');
-findYourElement.innerHTML = findYourElement.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
 
 anime.timeline({loop: true})
   .add({

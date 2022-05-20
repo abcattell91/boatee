@@ -5,10 +5,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :users, except: [:edit, :update , :index]
 
+#   resources :boats do
+#     resources :bookings
+#   end
+#   resources :bookings, except: [:new, :create] do
+#     resources :reviews, only: [:new, :create, :show, :index]
+#   end
+# end
+
+
   resources :boats do
-    resources :bookings
+    resources :bookings, only: [:index, :new, :create]
   end
-  resources :bookings, except: [:new, :create] do
-    resources :reviews, only: [:new, :create, :show, :index]
+  resources :bookings, only: [:index, :show, :edit, :update, :destroy] do
+    resources :reviews, only: [:index, :new, :create]
   end
 end
