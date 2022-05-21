@@ -1,12 +1,16 @@
 <div class="container-hero">
 
   <div class="container-info shadow bg-white rounded m-3 p-3">
+  <div class="boat-title">
     <h1><%= @boat.name %></h1>
-    <p> Docked? - <%= @boat.docked %> </p>
-    <p> Cost: £<%= @boat.price %> per night </p>
-    <p> Boat location <%= @boat.location %> </p>
-    <p> Boat Type: <%= @boat.boat_type %> </p>
-    <p> Guests: <%= @boat.guests %> </p>
+  </div>
+      <div class="boat-info">
+        <p> Docked? - <%= @boat.docked %> </p>
+        <p> Cost: £<%= @boat.price %> per night </p>
+        <p> Boat location <%= @boat.location %> </p>
+        <p> Boat Type: <%= @boat.boat_type %> </p>
+        <p> Guests: <%= @boat.guests %> </p>
+      </div>
   </div>
 
   <div class="container-img-btn">
