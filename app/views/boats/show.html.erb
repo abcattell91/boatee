@@ -5,7 +5,7 @@
     <h1><%= @boat.name %></h1>
   </div>
       <div class="boat-info">
-        <p> Docked? - <%= @boat.docked %> </p>
+        <p> Docked? - <%= @boat.docked %></p>
         <p> Cost: £<%= @boat.price %> per night </p>
         <p> Boat location <%= @boat.location %> </p>
         <p> Boat Type: <%= @boat.boat_type %> </p>
@@ -15,15 +15,17 @@
 
   <div class="container-img-btn">
     <img class="boat-image" src="<%=@boat.image_url%>">
-      <div class="container-button">
-        <%= link_to 'Back', boats_path, class: "btn btn-lg btn-primary" %>
-        <%= link_to 'View Bookings', bookings_path, class: "btn btn-lg btn-primary " %>
-  <!-- Button trigger modal -->
-        <button type="button" class=" btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
-        <%= render "bookings/new" %>
-      </div>
+
     </div>
 </div>
+<div class="container-button">
+  <%= link_to 'Back', boats_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to 'View Bookings', bookings_path, class: "btn btn-lg btn-primary " %>
+  <!-- Button trigger modal -->
+  <button type="button" class=" btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#new_booking_modal">Book this Boat</button>
+  <%= render "bookings/new" %>
+</div>
+
 <div>
 <div class="container-reviews p-5 m-5 shadow bg-white rounded">
   <h2>Reviews for <%= @boat.name %></h2>
