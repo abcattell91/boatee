@@ -44,7 +44,7 @@ class BoatsController < ApplicationController
   end
 
   def find_boat
-    @boat = Boat.find(params[:id])
+    @boat = Boat.find (params[:id])
     authorize @boat
   end
 end

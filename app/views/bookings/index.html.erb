@@ -1,18 +1,46 @@
-<div class="p-5 mt-3 shadow bg-white rounded justify-content-center">
-<h1 class="text-center p-2">Past and Future Bookings</h1>
-  <div class="row row-cols-1 row-cols-md-3 mt-3">
-  <% @bookings.each do |booking|%>
-    <div class="col-md-4 mb-4">
-      <div class="card-image-top boat-image h-100 img-thumbnail mb-2" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%=booking.boat.image_url%>)">
-        <div class="card-body">
-          <h1><%=link_to booking.boat.name, booking_path(booking), class: "card-text" %></h1>
-          <p class="card-text"><%= booking.start_date.strftime("%d-%m-%Y") %> - <%= booking.end_date.strftime("%d-%m-%Y") %></p>
-          <p class="card-text"><%= (booking.end_date - booking.start_date).to_i %> Nights</p>
-          <p class="card-text">Total: £<%= booking.cost %></p>
-          <%= link_to 'Remove', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "remove-button" %>
-          </div>
+<h1 class="text-center p-2">Future Bookings</h1>
+
+<div class="home-card-container">
+<div class="booking-home-cards">
+  <% @future_bookings.each do |booking| %>
+  <div class="home-card-category">
+    <%= link_to booking_path(booking) do %>
+    <%= image_tag("#{booking.boat.image_url}", class:"boat-img-card img-thumbnail")%>
+      <div class="card-body">
+      <h4 class="boat-card-text"><%= booking.boat.name %>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-moon"></i>&nbsp;<%= (booking.end_date - booking.start_date).to_i %> Nights<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-calendar-days"></i></i>&nbsp;<%=booking.start_date.strftime("%d-%m-%Y") %> - <%= booking.end_date.strftime("%d-%m-%Y") %><br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= booking.cost%> Total<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-location-arrow"></i>&nbsp;<%= booking.boat.location%>
+      </h5>
         </div>
-      </div>
-      <% end %>
+    <% end %> <!-- end of link_to -->
     </div>
+    <% end %> <!-- end of boat.each -->
+</div>
+</div>
+<h1 class="text-center p-2">Past Bookings</h1>
+
+<div class="home-card-container">
+<div class="booking-home-cards">
+  <% @past_bookings.each do |booking| %>
+  <div class="home-card-category">
+    <%= link_to booking_path(booking) do %>
+    <%= image_tag("#{booking.boat.image_url}", class:"boat-img-card img-thumbnail")%>
+      <div class="card-body">
+      <h4 class="boat-card-text"><%= booking.boat.name %>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-moon"></i>&nbsp;<%= (booking.end_date - booking.start_date).to_i %> Nights<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-calendar-days"></i></i>&nbsp;<%=booking.start_date.strftime("%d-%m-%Y") %> - <%= booking.end_date.strftime("%d-%m-%Y") %><br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= booking.cost%> Total<br>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-location-arrow"></i>&nbsp;<%= booking.boat.location%>
+      </h5>
+        </div>
+    <% end %> <!-- end of link_to -->
+    </div>
+
   </div>
+    <% end %> <!-- end of boat.each -->
+</div>
+</div>
+
+<%= render 'shared/footer' %>

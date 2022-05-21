@@ -78,7 +78,6 @@ a:hover,
 a:active{
   text-decoration: none;
 }
-
 .home-card-text {
   color: black;
 }
@@ -103,40 +102,8 @@ a:active{
   background-repeat: no-repeat;
 }
 
-.home-cards {
+.booking-home-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 24px;
-}
-.home-card-container {
-  margin: 24px;
-  display: grid;
-  justify-content: space-evenly;
-
-}
-.card-img-top {
-  width: max-content;
-  height: 12vw;
-  object-fit: cover;
-  text-decoration: none !important;
-  border-top-right-radius: 32px;
-  border-top-left-radius: 32px;
-  background-repeat: no-repeat;
-}
-
-a,
-a:link,
-a:visited,
-a:hover,
-a:active{
-  text-decoration: none;
-}
-.home-card-text {
-  color: black;
-}
-
-.home-card-text-small {
-  color: rgba(0, 0, 0, 0.3);
-  text-decoration: none !important;
-  font-size: 1.1rem;
 }
