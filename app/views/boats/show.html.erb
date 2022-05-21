@@ -2,7 +2,11 @@
 
   <div class="container-info shadow bg-white rounded m-3 p-3">
     <h1><%= @boat.name %></h1>
-    <p> Docked? - <%= @boat.docked %> </p>
+    <p> Docked? - <% if @boat.docked %>
+    <%= "Yes" %>
+    <% else %>
+    <%= "No" %>
+    <% end %></p>
     <p> Cost: £<%= @boat.price %> per night </p>
     <p> Boat location <%= @boat.location %> </p>
     <p> Boat Type: <%= @boat.boat_type %> </p>
