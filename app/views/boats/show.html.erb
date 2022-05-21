@@ -5,7 +5,11 @@
     <h1><%= @boat.name %></h1>
   </div>
       <div class="boat-info">
-        <p> Docked? - <%= @boat.docked %></p>
+        <p> Docked? - <% if @boat.docked %>
+          <%= "Yes" %>
+        <% else %>
+          <%= "No" %>
+        <% end %></p>
         <p> Cost: £<%= @boat.price %> per night </p>
         <p> Boat location <%= @boat.location %> </p>
         <p> Boat Type: <%= @boat.boat_type %> </p>
