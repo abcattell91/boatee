@@ -1,4 +1,5 @@
-anime.timeline({loop: false})
+const animation = () => {
+  anime.timeline({loop: false})
   .add({
     targets: '.ml15 .word',
     scale: [14,1],
@@ -7,3 +8,5 @@ anime.timeline({loop: false})
     duration: 800,
     delay: (el, i) => 800 * i
   })
+}
+export { animation };
