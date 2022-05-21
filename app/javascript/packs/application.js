@@ -22,6 +22,7 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   textWrapper();
   animation();
+
   // textWrapper();
   // initFlatpickr2();
 });
