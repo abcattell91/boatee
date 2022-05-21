@@ -1,3 +1,4 @@
+<div class="container">
 <div class="search-bar">
 <%= form_tag boats_path, method: :get do %>
   <%= text_field_tag :query,
@@ -5,9 +6,12 @@
     class: "form-control",
     placeholder: "Find a boat by name or location"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
 </div>
-<div class="m-3 p-3"> <%= link_to 'Hoast your boat', new_boat_path(@boat), class: "btn btn-primary" %></div>
+  <div class="search-bar-logo">
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
+</div>
+
 <div class="home-card-container">
 <div class="home-cards">
 
