@@ -1,17 +1,34 @@
-<div class="home-card-container">
-  <div class="home-cards">
-    <% @boats.each do |boat| %>
-    <div class="home-card-category">
-      <%= link_to boat_path(boat) do %>
-      <%= image_tag("#{boat.image_url}", class:"boat-img-card img-thumbnail")%>
-        <div class="card-body">
-          <h4 class="boat-card-text"><%= boat.name %>
-          <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= boat.price %>p/n<br>
-          <i class="fa-solid fa-bed"></i>&nbsp;<%= boat.guests %>
-          &nbsp;&nbsp;<i class="fa-solid fa-location-arrow"></i>&nbsp;<%= boat.location %></h5>
-          </div>
-        <% end %> <!-- end of link_to -->
-    </div>
-      <% end %> <!-- end of boat.each -->
+<div class="container">
+<div class="search-bar">
+<%= form_tag boats_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a boat by name or location"
+  %>
+</div>
+  <div class="search-bar-logo">
+  <%= submit_tag "Search", class: "btn btn-primary" %>
   </div>
+</div>
+
+<div class="home-card-container">
+<div class="home-cards">
+
+<% end %>
+  <% @boats.each do |boat| %>
+  <div class="home-card-category">
+    <%= link_to boat_path(boat) do %>
+    <%= image_tag("#{boat.image_url}", class:"boat-img-card img-thumbnail")%>
+      <div class="card-body">
+      <h4 class="boat-card-text"><%= boat.name %>
+      <h5 class="home-card-text-small"><i class="fa-solid fa-sterling-sign"></i>&nbsp;<%= boat.price %>p/n<br>
+      <i class="fa-solid fa-bed"></i>&nbsp;<%= boat.guests %>
+      &nbsp;&nbsp;<i class="fa-solid fa-location-arrow"></i>&nbsp;<%= boat.location %>
+      </h5>
+        </div>
+    <% end %> <!-- end of link_to -->
+    </div>
+    <% end %> <!-- end of boat.each -->
+</div>
 </div>
